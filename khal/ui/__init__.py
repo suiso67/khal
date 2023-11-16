@@ -1321,6 +1321,11 @@ def _add_calendar_colors(
             color = collection.default_color
         else:
             color = cal['color']
+
+        # XXX: Dirty patch for google calendar which has alpha value for their calendar
+        if len(color) > 7 and color.endswith('FF'):
+            color = color[0:len(color)-2]
+
         entry = _urwid_palette_entry(
             attr_template.format(cal['name']),
             color,
