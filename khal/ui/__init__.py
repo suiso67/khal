@@ -30,6 +30,7 @@ import urwid
 
 from .. import utils
 from ..khalendar.exceptions import ReadOnlyCalendarError
+from ..parse_datetime import timedelta2str
 from . import colors
 from .base import Pane, Window
 from .editor import EventEditor, ExportDialog
@@ -891,6 +892,7 @@ class EventColumn(urwid.WidgetWrap):
             'summary': '',
             'timezone': self._conf['locale']['default_timezone'],
             'allday': allday,
+            'alarms': timedelta2str(self._conf['default']['default_event_alarm']),
         })
         self.edit(event)
 
