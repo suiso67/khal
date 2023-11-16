@@ -190,8 +190,6 @@ def relative_timedelta_str(day: dt.date) -> str:
 
 def get_wrapped_text(widget):
     return widget.original_widget.get_edit_text()
-<<<<<<< ours
-=======
 
 
 def human_formatter(format_string, width=None, colors=True):
@@ -281,4 +279,3 @@ def str2alarm(alarms: str, description: str) -> Iterator[icalendar.Alarm]:
         new_alarm.add('TRIGGER', alarm_trig)
         new_alarm.add('DESCRIPTION', description)
         yield new_alarm
->>>>>>> theirs
